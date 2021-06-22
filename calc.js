@@ -58,7 +58,17 @@ function display(num) {
     //new display value when user enters number after sum
   
     if (result) {
+        let stringRes = result.toString();
         //if not with 10 decimal places round to 10th decimal place
+        if (stringRes.indexOf(".") !== -1) {
+            let index = stringRes.indexOf(".");
+            let decPlaces = stringRes.length - index;
+            if (decPlaces > 10) {
+                num = result.toFixed(10);
+                }
+            
+            }
+        
         //find location of decimal the slice
         show.innerText = show.innerText + num;
         result = false;
