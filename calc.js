@@ -27,6 +27,24 @@ equals.addEventListener('click', () => operate(opType, num1, num2));
 
 deleteBtn.addEventListener('click', () => deleteChar())
 
+document.addEventListener('keyup', typeKey);
+
+function typeKey(e) {
+    if (e.key == "+" || e.key == "-" || e.key =="/" || e.key == "*") {
+        storeOperater(e.key);
+    }
+    else if (e.code.search("Digit") !== -1 || e.code == "Period") {
+      display(e.key);
+    }  else if (e.key == "=" || e.key == "Enter") {
+        operate(opType, num1, num2);
+    }
+    if (e.key == "Backspace") {
+        deleteChar();
+    }
+ 
+    console.log(e);
+
+}
 function clear() {
     num1 = undefined;
     num2 = undefined;
@@ -56,20 +74,19 @@ function deleteChar() {
 
 function display(num) {
     //new display value when user enters number after sum
-  
+
     if (result) {
         let stringRes = result.toString();
         //if not with 10 decimal places round to 10th decimal place
         if (stringRes.indexOf(".") !== -1) {
             let index = stringRes.indexOf(".");
             let decPlaces = stringRes.length - index;
-            if (decPlaces > 10) {
-                num = result.toFixed(10);
+            if (decPlaces > 17) {
+                num = result.toFixed(17);
                 }
             
-            }
-        
-        //find location of decimal the slice
+        }
+    
         show.innerText = show.innerText + num;
         result = false;
         
@@ -88,8 +105,10 @@ function display(num) {
             console.log(total.indexOf("."))
             return;
             }
+        }
+        if (show.innerText.length < 25) {
+            show.innerText = show.innerText + num;
         }  
-        show.innerText = show.innerText + num;
         num1 = show.innerText;
       
     } 
@@ -108,8 +127,10 @@ function display(num) {
             console.log(total.indexOf("."))
             return;
             }
+        }
+        if (show.innerText.length < 25) {
+            show.innerText = show.innerText + num;
         }  
-        show.innerText = show.innerText + num;
         num2 = show.innerText;
     } 
     //clear error message when begin
