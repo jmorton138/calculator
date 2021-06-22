@@ -1,19 +1,24 @@
 .container {
     border: 1px solid black;
     width: 300px;
+    background: #363533;
+    border-radius: 10px;
+    box-shadow: 4px 7px 10px #4a4948; 
 }
 #display {
     border: 1px solid black;
     height: 50px;
-    margin: 15px;
+    margin: 15px 15px 12px 15px;
     background-color: #d0e0b8;
 }
 
 #btns {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    border: 1px solid black;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
     height: 150px;
+    padding: 12px;
+    padding-bottom: 20px;
 
 }
 
@@ -25,7 +30,7 @@ button:hover {
 button {
     font-family: arial;
     border: none;
-    height: 30px;
-    width: 60px;
+    /* height: 30px;
+    width: 60px; */
     border-radius: 4px;
 }
