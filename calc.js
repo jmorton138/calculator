@@ -42,7 +42,7 @@ function typeKey(e) {
         deleteChar();
     }
  
-    console.log(e);
+    // console.log(e);
 
 }
 function clear() {

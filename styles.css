@@ -1,36 +1,58 @@
+body {
+    background-image: url(/images/woodgrain.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
-    border: 1px solid black;
-    width: 300px;
+    border: 1px solid #363533;
+    width: 400px;
+    height: 500px;
     background: #363533;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 4px 7px 10px #4a4948; 
+    margin: auto;
 }
 #display {
-    border: 1px solid black;
-    height: 50px;
-    margin: 15px 15px 12px 15px;
+    height: 100px;
+    margin: 25px 15px 12px 15px;
     background-color: #d0e0b8;
-}
+    font-size: 40px;
+    font-family: arial;
+    overflow-wrap: break-word;
 
+}
+#clear {
+    grid-column: 1/4;
+    background-color: #9c4a43;
+    color: white;
+}
+#backspace{
+    background-color: #1d5280;
+    color: white;
+}
 #btns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    height: 150px;
-    padding: 12px;
-    padding-bottom: 20px;
+    grid-gap: 7px;
+    height: 300px;
+    padding: 18px;
+    padding-top: 30px;
 
 }
 
-button:hover {
-    background: grey;
+button:hover, #clear:hover, #backspace:hover {
+    background: #686f75;
     color: white;
 }
 
 button {
     font-family: arial;
     border: none;
-    /* height: 30px;
-    width: 60px; */
-    border-radius: 4px;
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+.op {
+    background-color: #518787;
+    color: white;
 }
