@@ -11,6 +11,7 @@ body {
     border-radius: 20px;
     box-shadow: 4px 7px 10px #4a4948; 
     margin: auto;
+    margin-top: 50px;
 }
 #display {
     height: 100px;
