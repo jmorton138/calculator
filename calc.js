@@ -31,12 +31,15 @@ document.addEventListener('keyup', typeKey);
 
 function typeKey(e) {
     if (e.key == "+" || e.key == "-" || e.key =="/" || e.key == "*") {
+        console.log(e.key);
         storeOperater(e.key);
     }
     else if (e.code.search("Digit") !== -1 || e.code == "Period") {
       display(e.key);
     }  else if (e.key == "=" || e.key == "Enter") {
-        operate(opType, num1, num2);
+        if (opType && num1 && num2) {
+            operate(opType, num1, num2);
+        }
     }
     if (e.key == "Backspace") {
         deleteChar();
